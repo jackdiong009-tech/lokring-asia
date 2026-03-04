@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lokring Asia | Advanced Fluid Technology</title>
+    <style>
+      :root {
+        --lokring-blue: #003366; 
+        --lokring-red: #b22234;  
+        --light-bg: #f8fafc;
+        --dark-footer: #1a202c;
+      }
+
+      /* Strictly Arial for the entire page */
+      body, input, textarea, select, button, nav a, p, h1, h2, h3, h4 {
+        font-family: Arial, Helvetica, sans-serif !important;
+      }
+
+      body {
+        background-color: var(--light-bg);
+        color: #333;
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+
+      /* 1. Navigation - Updated to remove Design Guide */
+      nav {
+        background-color: var(--lokring-blue);
+        padding: 18px 0;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+      }
+      nav a {
+        color: white;
+        margin: 0 15px; 
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      nav a:hover { color: #cbd5e1; }
+
+      /* 2. Top Image Header */
+      .top-image-container {
+        width: 100%;
+        height: 60vh; 
+        margin-top: 55px;
+        overflow: hidden;
+      }
+      .top-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        display: block;
+      }
+
+      /* 3. Branding & Welcome Content */
+      .welcome-content {
+        text-align: center;
+        padding: 80px 20px;
+        background-color: white;
+      }
+      .brand-title {
+        font-size: 5rem;
+        font-weight: 900;
+        margin: 0;
+        letter-spacing: -3px;
+        line-height: 0.9;
+        text-transform: uppercase;
+      }
+      .title-lok { color: var(--lokring-blue); }
+      .title-ring { color: var(--lokring-red); }
+      .title-asia { 
+        display: block; 
+        font-size: 1.5rem; 
+        color: var(--lokring-blue); 
+        letter-spacing: 12px; 
+        margin-top: 15px;
+        font-weight: normal;
+      }
+      .welcome-content p {
+        font-size: 1.4rem;
+        line-height: 1.8;
+        color: #475569;
+        max-width: 850px;
+        margin: 35px auto 45px auto;
+      }
+
+      /* 4. Action Buttons */
+      .btn-group {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        padding: 18px 45px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+      }
+      .btn-blue { background-color: var(--lokring-blue); color: white; }
+      .btn-red { background-color: var(--lokring-red); color: white; }
+      .btn:hover { transform: translateY(-3px); opacity: 0.9; }
+
+      /* 5. Advantage Cards */
+      .grid-container {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        padding: 80px 8%;
+        max-width: 1300px;
+        margin: 0 auto;
+      }
+      .card {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        flex: 1;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        border-top: 6px solid var(--lokring-blue);
+        text-align: center;
+      }
+      .card h3 { color: var(--lokring-blue); margin-top: 0; }
+
+      /* 6. Contact Form Section */
+      .contact-section { background-color: #f1f5f9; padding: 100px 20px; }
+      .form-container {
+        max-width: 650px;
+        margin: 0 auto;
+        background: white;
+        padding: 60px;
+        border-radius: 24px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+      }
+      label { font-weight: bold; display: block; margin-bottom: 8px; color: var(--lokring-blue); }
+      input, textarea {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 25px;
+        border: 2px solid #e2e8f0;
+        border-radius: 10px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
+      .submit-btn {
+        background-color: var(--lokring-blue); 
+        color: white; 
+        padding: 20px; 
+        border: none; 
+        border-radius: 10px; 
+        cursor: pointer; 
+        font-size: 18px; 
+        width: 100%; 
+        font-weight: bold;
+      }
+
+      /* 7. Corporate Footer */
+      footer {
+        background-color: var(--dark-footer);
+        color: #cbd5e1;
+        padding: 60px 20px 30px 20px;
+        text-align: center;
+      }
+      .footer-cols {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        max-width: 1100px;
+        margin: 0 auto 40px auto;
+        flex-wrap: wrap;
+      }
+      .footer-col { flex: 1; min-width: 250px; text-align: center; }
+      .footer-col h4 {
+        color: white;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
+      }
+      .footer-col p { 
+        font-size: 14px; 
+        line-height: 1.6; 
+        margin: 0; 
+        text-align: left; 
+        display: inline-block; 
+      }
+      .footer-legal { font-size: 12px; color: #94a3b8; letter-spacing: 0.5px; }
+      .footer-legal a { color: #94a3b8; text-decoration: none; margin: 0 5px; }
+
+      @media (max-width: 900px) {
+        .brand-title { font-size: 3.5rem; }
+        .grid-container, .footer-cols { flex-direction: column; }
+      }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="https://catalog.lokring.com/" target="_blank">Products</a>
+        <a href="https://www.lokring.com/resources/catalogs-cad-drawings/" target="_blank">Catalog & DRAWINGS</a>
+        <a href="https://www.lokring.com/resources/product-approvals/" target="_blank">Certifications</a>
+        <a href="https://www.lokring.com/resources/technical-bulletins/" target="_blank">DESIGN & APPLICATION GUIDE</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
+
+    <div class="top-image-container">
+        <img src="https://www.lokring.com/wp-content/uploads/2018/12/54.jpg" alt="Lokring Technology">
+    </div>
+
+    <div class="welcome-content">
+        <h1 class="brand-title">
+            <span class="title-lok">LOK</span><span class="title-ring">RING</span>
+            <span class="title-asia">ASIA</span>
+        </h1>
+        <p>The global leader in weldless pipe connections. We deliver permanent, gas-tight seals for Singapore's industrial environments, ensuring safety and zero hot work.</p>
+        <div class="btn-group">
+            <a href="https://catalog.lokring.com/" target="_blank" class="btn btn-blue">Browse Products</a>
+            <a href="#contact" class="btn btn-red">Get a Quote</a>
+        </div>
+    </div>
+
+    <div class="grid-container">
+        <div class="card">
+            <h3>No Hot Work</h3>
+            <p>Eliminate welding permits and fire watches in hazardous environments.</p>
+        </div>
+        <div class="card">
+            <h3>Reliability</h3>
+            <p>Equivalent to a weld. ASME qualified for permanent mechanical seals.</p>
+        </div>
+        <div class="card">
+            <h3>Fast Install</h3>
+            <p>Reduce project labor costs by up to 80% with our hydraulic tooling.</p>
+        </div>
+    </div>
+
+    <div class="contact-section" id="contact">
+        <div class="form-container">
+            <h2 style="color: var(--lokring-blue); font-weight: 900; margin-top: 0; text-align: center;">Engineering Inquiry</h2>
+            <form id="contact-form" action="https://script.google.com/macros/s/AKfycbzCtl9S-7NrZQ4kOxey3o2eNt7-mwpBvOy8I9e83HG5LqdH_tWScHM9QXJXZN08lhV8/exec" method="POST">
+                <label>Full Name:</label>
+                <input type="text" name="name" required placeholder="Jack Diong">
+                <label>Work Email:</label>
+                <input type="email" name="email" required placeholder="sales@svf.com.sg">
+                <label>Technical Details:</label>
+                <textarea name="message" style="height: 120px;" required placeholder="Describe your piping requirements..."></textarea>
+                <button type="submit" id="submit-btn" class="submit-btn">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-cols">
+            <div class="footer-col">
+                <h4>Corporate Headquarters</h4>
+                <p>
+                    <strong>SG Fluid Technologies Pte Ltd</strong><br>
+                    UEN: 202422808R<br>
+                    18 Boon Lay Way #03-137, Tradehub<br>
+                    Singapore 609966
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Office Phone</h4>
+                <p>+65 6993 7917</p>
+            </div>
+            <div class="footer-col">
+                <h4>Email</h4>
+                <p><a href="mailto:sales@svf.com.sg" style="color: #cbd5e1; text-decoration: none;">sales@svf.com.sg</a></p>
+            </div>
+        </div>
+        <hr style="border: 0; border-top: 1px solid #475569; max-width: 1100px; margin: 0 auto 25px auto;">
+        <div class="footer-legal">
+            © 2026 Lokring  ·  All Rights Reserved | 
+            <a href="#">Privacy Policy</a> | 
+            <a href="#">Terms of Use</a>
+        </div>
+    </footer>
+
+    <script>
+      const form = document.getElementById('contact-form');
+      const btn = document.getElementById('submit-btn');
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        btn.innerText = "Syncing...";
+        btn.disabled = true;
+        const data = new FormData(form);
+        fetch(form.action, { method: 'POST', body: data, mode: 'no-cors' })
+        .then(() => { setTimeout(() => { window.location.href = "thanks.html"; }, 800); })
+        .catch(() => { window.location.href = "thanks.html"; });
+      });
+    </script>
+
+</body>
+</html>
